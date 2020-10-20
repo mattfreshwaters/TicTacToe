@@ -148,7 +148,6 @@ public class Main {
         } else if(board[0][2] == 'x' && board[1][1] == 'x' && board[2][0] == 'x' || board[0][2] == 'O' && board[1][1] == 'O' && board[2][0] == 'O'){
             winner = true;
         }
-
         // If we get to here, no winner has been declared yet
 
     }
