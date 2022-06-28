@@ -4,18 +4,28 @@ import ReactDOM from 'react-dom/client';
 import '../css/index.css'
 
 class Board extends React.Component {
-    renderSquare(i) {
+    renderSquare(r, c) {
+       
       return (
         <Square
-          value={this.props.squares[i]}
-          onClick={() => this.props.onClick(i)}
+          value={this.props.squares[r]}
+          onClick={() => this.props.onClick(r)}
+          position={r}
         />
       );
     }
+
+    
   
     render() {
+        // this creates a 3x3 board
+        let arr = Array(3).fill().map(()=>Array(3).fill())
+        console.log("arr: ", arr)
+
+
+
       return (
-        <div>
+        <div className="board">
           <div className="board-row">
             {this.renderSquare(0)}
             {this.renderSquare(1)}

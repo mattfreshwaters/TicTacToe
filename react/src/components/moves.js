@@ -5,8 +5,6 @@ function Moves(props){
     const history = props.history
 
     const moves = history.map((step, move)=>{
-        console.log("step: ", step)
-        console.log("move: ", move)
         const desc = move ? 
         'Go to move #' + move : 'Go to game start'
 
@@ -18,7 +16,7 @@ function Moves(props){
       })
 
       return(
-        <ol>{moves}</ol>
+        <ol className="moves">{moves}</ol>
       )
 
 }
