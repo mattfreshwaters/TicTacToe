@@ -44,8 +44,12 @@ body {
     display: flex;
     flex-direction: row;
   }
+
+  .game-board{
+    float:left
+  }
   
   .game-info {
-    margin-left: 20px;
+    float:right
   }
   
