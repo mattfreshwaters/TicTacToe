@@ -3,7 +3,7 @@ function calculateWinner(squares, brdSize) {
   // different ways you can win in this method of tic tac toe, ONLY in a 3x3 mode
   const lines = [
     [0, 1, 2],
-    [3, 4, 5],
+    [3, 4, 5],  
     [6, 7, 8],
     [0, 3, 6],
     [1, 4, 7],
@@ -67,7 +67,6 @@ function calculateWinner(squares, brdSize) {
   horizontalAnswers(boardSize);
   verticalAnswers(boardSize)
   diagonalAnswers(boardSize)
-  console.log("answers: ", answers);
 
   return null;
 }

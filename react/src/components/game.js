@@ -18,17 +18,12 @@ class Game extends React.Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleChange(event) {
     const size = parseInt(event.target.value);
-    event.target.value === 0 ? this.setState({ boardSize: 3 }) : this.setState({ boardSize: size });
-  }
-
-  handleSubmit(event) {
-    alert("A name was submitted: " + this.state.value);
-    event.preventDefault();
+    console.log("size: ", size)
+    event.target.value ? this.setState({ boardSize: 3 }) : this.setState({ boardSize: size });
   }
 
   handleClick(i) {
@@ -75,14 +70,15 @@ class Game extends React.Component {
     const winner = calculateWinner(current.squares, this.state.boardSize);
 
     let status;
-    if (this.state.stepNumber <= 9) {
+    if (this.state.stepNumber <= 8) {
       if (winner) {
         status = "Winner: " + winner;
       } else {
         status = "Next player: " + (this.state.xIsNext ? "X" : "O");
       }
-    } else {
-      status = "Cat's game";
+    }
+    else {
+      winner ? status = "Winner: " + winner : status = "Cat's game"
     }
 
     return (
@@ -96,7 +92,7 @@ class Game extends React.Component {
           />
         </div>
         <div className="game-info">
-          <form onSubmit={this.handleSubmit}>
+          <form className="form">
               <input
                 type="number"
                 max="12"

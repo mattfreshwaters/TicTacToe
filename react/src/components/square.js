@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 
 function Square(props) {
   return (
-      <button className="square" onClick={props.onClick}>
+      <button className="square" key={props.position} onClick={props.onClick}>
         {props.value}
       </button>
     );

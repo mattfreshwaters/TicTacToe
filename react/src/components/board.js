@@ -6,9 +6,11 @@ class Board extends React.Component {
 
     constructor(props){
         super(props)
+        console.log(props.size)
 
         this.state = {
             count: 0,
+            boardSize:props.size
         }
     }
    
@@ -17,21 +19,23 @@ class Board extends React.Component {
       <Square
         value={this.props.squares[i]}
         onClick={() => this.props.onClick(i)}
+        position={i}
       />
     );
   }
 
   render() {
     //const boardSize = this.props.size;
-
+    const rows = Array.from(Array(this.state.boardSize).keys())
+    const columns = Array.from(Array(this.state.boardSize).keys())
 
     return (
     	<div className="board">
       {
-      	[0,1,2].map( (row) => {
+      	rows.map( (row) => {
 				 return <div key={row} className="board-row">
             {
-            	[0,1,2].map( (col) => {
+            	rows.map( (col) => {
           			return this.renderSquare((3*row)+col)
           		})
             }
